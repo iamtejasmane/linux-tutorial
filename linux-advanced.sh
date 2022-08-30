@@ -100,6 +100,33 @@ scp /home/tejas/project-backend.zip devserver01:/home/tejas
 # to copy directory use : -r # to preserve the permissions -p
 
 
+### IPTABLES ###
+
+# to add iptable rule
+iptables -A INPUT -p tcp -s 172.16.238.187 --dport 22 -j ACCEPT
+
+# to drop any other connection
+iptables -A INPUT -p tcp --dport 22 -j DROP
+
+# to delete a rule 
+iptables -D OUTPUT 5 # order number
+
+## Cron Job ##
+
+# to open cron job file
+crontab -e
+
+# to list cron job
+crontab -l
+
+#### Storage #####
+
+# to list block storage
+lsblk
+
+# to list using fdisk
+sudo fdisk -l /dev/sda
+
 
 
 
